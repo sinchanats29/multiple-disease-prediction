@@ -45,28 +45,28 @@ python manage.py runserver
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/disease_prediction-homepage.png)
+![Home](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease_prediction-homepage.png)
 
 ### 🔐 Login Page
-![Login Page](screenshots/disease_prediction-loginpage.png)
+![Login](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease_prediction-loginpage.png)
 
 ### 💉 Diabetes Prediction
-![Diabetes](screenshots/disease-prediction-diabetes.png)
+![Diabetes](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-diabetes.png)
 
 ### ❤️ Heart Disease Prediction
-![Heart](screenshots/disease-prediction-heart.png)
+![Heart](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-heart.png)
 
 ### 🧠 Parkinson Prediction
-![Parkinson](screenshots/disease-prediction-parkinson.png)
+![Parkinson](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-parkinson.png)
 
 ### 📊 Result Page
-![Result](screenshots/disease-prediction-result.png)
+![Result](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-result.png)
 
 ### 📞 Contact Page
-![Contact](screenshots/disease-prediction-contactpage.png)
+![Contact](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-contactpage.png)
 
 ### 🛠 Services Page
-![Services](screenshots/disease-prediction-servicespage.png)
+![Services](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease-prediction-servicespage.png)
 
 
 
