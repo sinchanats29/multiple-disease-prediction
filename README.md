@@ -42,9 +42,33 @@ pip install -r requirements.txt
 Run the project
 python manage.py runserver
 
-📸 Screenshots
+## 📸 Screenshots
 
-![Prediction Page](images/predict.png)
+### 🏠 Home Page
+![Home Page](screenshots/disease_prediction-homepage.png)
+
+### 🔐 Login Page
+![Login Page](screenshots/disease_prediction-loginpage.png)
+
+### 💉 Diabetes Prediction
+![Diabetes](screenshots/disease-prediction-diabetes.png)
+
+### ❤️ Heart Disease Prediction
+![Heart](screenshots/disease-prediction-heart.png)
+
+### 🧠 Parkinson Prediction
+![Parkinson](screenshots/disease-prediction-parkinson.png)
+
+### 📊 Result Page
+![Result](screenshots/disease-prediction-result.png)
+
+### 📞 Contact Page
+![Contact](screenshots/disease-prediction-contactpage.png)
+
+### 🛠 Services Page
+![Services](screenshots/disease-prediction-servicespage.png)
+
+
 
 
 🎯 Outcome
