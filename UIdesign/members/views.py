@@ -15,7 +15,8 @@ from IPython.display import display
 import textwrap
 
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyCsxihphRnek2p2B7qx3NBM4T3nUwpwwLo")
+import os
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 # Create your views here.
