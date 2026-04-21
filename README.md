@@ -43,8 +43,7 @@ Run the project
 python manage.py runserver
 
 ## 📸 Screenshots
-
-https://github.com/sinchanats29/multiple-disease-prediction/blob/main/UIdesign/screenshots/disease-prediction-contactpage.png.png?raw=true
+UIdesign/screenshots/disease-prediction-contactpage.png.png
 
 ### 🏠 Home Page
 ![Home](https://raw.githubusercontent.com/sinchanats29/multiple-disease-prediction/main/screenshots/disease_prediction-homepage.png)
