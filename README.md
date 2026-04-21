@@ -44,7 +44,6 @@ python manage.py runserver
 
 📸 Screenshots
 
-![Home Page](images/home.png)
 ![Prediction Page](images/predict.png)
 
 
