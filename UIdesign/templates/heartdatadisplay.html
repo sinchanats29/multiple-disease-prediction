@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Predict Heart Disease</title>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Font-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'predictheart/css/nunito-font.css' %}"
+    />
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'predictheart/css/style4.css' %}" />
+
+    <!-- nav CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+  </head>
+  <body class="form-v9">
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href="/doctorhome"><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/logout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <section style="background-color: #eee">
+      <div class="container py-5">
+        
+            
+          <div class="col-lg-10">
+            <div class="card mb-4 ">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Name</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.name }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Patient Id</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.user_id }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Age</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.age }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Sex</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.sex }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">cp</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.cp }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">trestbps</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.trestbps }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">chol</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.chol }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">fbs</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.fbs }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">restecg</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.restecg }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">thalach </p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.thalach }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">exang</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.exang }}</p>
+                  </div>
+                </div>
+                <hr />
+                
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Old peak</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.oldpeak }} </p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">slope</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.slope }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">ca</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.ca }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">thal</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.thal }}</p>
+                  </div>
+                  <hr/>
+                  <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Model Prediction</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.modelprediction }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Doctor Verdict</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ data_entry.doctorverdict }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Update/Add Doctor Verdict</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <form action="/update_heart_doctorverdict/{{ data_entry.user_id }}/"  method="POST" >
+                       {% csrf_token %}
+                    <input class="text-muted mb-0" type="text" step="0.01" name="heartdoctorverdict" ></input>
+                    <button type=" submit" > Submit </button>
+                    </form>
+                  </div>
+                </div>
+        
+                </div>
+              </div>
+            </div>
+            
+      </div>
+    </section>
+  </body>
+</html>

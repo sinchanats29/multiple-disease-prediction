@@ -1,0 +1,128 @@
+body {
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  margin: 0px;
+  /* padding: 0;*/
+}
+
+.containerinput {
+  /* display: flex; */
+  /* padding-top: 10px; */
+  max-width: 1000px;
+  margin: 140px auto;
+}
+
+.containeroutput {
+  /* display: flex; */
+  max-width: 1000px;
+  margin: 140px auto;
+}
+
+.input-box,
+.output-box {
+  flex: 1;
+  padding: 30px;
+  background-color: #dfc5b5;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+.textor {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.box-header {
+  margin-top: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.drop-area.active {
+  border-color: #ee6e1e;
+}
+
+.text {
+  color: #666;
+}
+
+.button {
+  cursor: pointer;
+  margin-top: 10px; /* Maintain the existing margin-top */
+  margin-bottom: 15px; /* Add margin-bottom to create space */
+  padding: 9px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ee6e1e;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.buttonclear {
+  cursor: pointer;
+  margin-top: 5px; /* Maintain the existing margin-top */
+  margin-bottom: 15px;
+  margin-left: 10px; /* Add margin-bottom to create space */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ee6e1e;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.output-box {
+  margin-left: 200px;
+  margin-top: 1px; /* Add margin-top to match the margin-top of the input box */
+  /* overflow: hidden; */
+}
+
+.button:hover {
+  background-color: #ee6e1e;
+}
+
+.output {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #dfc5b5;
+  font-size: 19px;
+  border-radius: 15px;
+  border-top: #333;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+}
+.submit-button {
+  cursor: pointer;
+  padding: 8px 20px;
+  font-size: 18px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ee6e1e;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ee6e1e;
+}

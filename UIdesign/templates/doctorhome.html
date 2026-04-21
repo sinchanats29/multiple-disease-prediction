@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Health Bot</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+  </head>
+
+  <body style="background-color:#fef8f5">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href="/doctorhome"><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            {% comment %} <li><a class="nav-link scrollto active" href="/home">Home</a></li>
+            <li><a class="nav-link scrollto " href="/services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li> {% endcomment %}
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/doctorlogout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/doctorlogin">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            {% comment %} <h2>Patient's Data</h2> {% endcomment %}
+            <p>Hello! Doctor</p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-md-6 col-lg-3  align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+            <div class="col-lg-15 order-2 order-lg-3 hero-img">
+                <img
+                  src="{% static 'assets/img/img2.png'  %}"
+                  class="right-image img-fluid animated col-md-10"
+                  alt=""
+                />
+            </div>
+          </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                {% comment %} <div class="icon"><i class="bx bx-file" ></i></div> {% endcomment %}
+              </br>
+                <h4 class="title"><a style="color: #eb5d1e;" href="/display_heart_data">Heart Disease Patients Data</a></h4>
+                <p class="description">
+                  Patient record of Heart Disease predicted from AI model
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+              </br>
+              
+                <h4 class="title"><a style="color: #eb5d1e;" href="/display_diabetes_data">Diabetes Disease Patients Data</a></h4>
+                <p class="description">
+                  Patient record of Diabetes Disease predicted from AI model
+                </p>
+              </div>
+            </div>
+
+           <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+              </br>
+                <h4 class="title"><a style="color: #eb5d1e;" href="/display_parkinson_data">Parkinson Disease Patients Data</a></h4>
+                <p class="description">
+                  Patient record of Parkinson Disease predicted from AI model
+                </p>
+              </div>
+            </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+    </main>
+    <!-- End #main -->
+
+    
+
+    {% comment %} <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a> {% endcomment %}
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/aos/aos.js'  %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js'  %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js'  %}"></script>
+  </body>
+</html>

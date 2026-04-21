@@ -1,0 +1,532 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Health Bot</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href=""><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/logout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row gy-4">
+          <div
+            class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+          >
+            <h1>Better digital health experience with Health Bot</h1>
+            <h2>Making Health affordable and easily accessible</h2>
+            <div>
+              <a href="/healthgpt" class="btn-get-started scrollto"
+                >Try HealthGpt</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img">
+            <img
+              src="{% static 'assets/img/img1.png'  %}"
+              class="img-fluid animated"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Services</h2>
+            <p>Check out the great services we offer</p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-md-6 col-lg-3  align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+            <div class="col-lg-15 order-2 order-lg-3 hero-img">
+                <img
+                  src="{% static 'assets/img/img2.png'  %}"
+                  class="right-image img-fluid animated col-md-10"
+                  alt=""
+                />
+            </div>
+          </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                {% comment %} <div class="icon"><i class="bx bx-file" ></i></div> {% endcomment %}
+              </br>
+                <h4 class="title"><a style="color: #eb5d1e;" href="/healthgpt">HealthGpt</a></h4>
+                <p class="description">
+                  HealthGpt a human like conversational generative AI using large language model 
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+              </br>
+              
+                <h4 class="title"><a style="color: #eb5d1e;" href="/healthyfood">Check Food Healthy</a></h4>
+                <p class="description">
+                  Check whether a food is healthy or not with the help of large image model
+                </p>
+              </div>
+            </div>
+
+           <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+              </br>
+                <h4 class="title"><a style="color: #eb5d1e;" href="/services">Disease Prediction</a></h4>
+                <p class="description">
+                  Predict disease like Heart,Diabetes,Parkinson within seconds
+                </p>
+              </div>
+            </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Team</h2>
+            <p>Our team is always here to help</p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team/t1.png'  %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Mohan Raj G</h4>
+                    <span>Doctor  </span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team/t2.png'  %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Srinivas Naik B</h4>
+                    <span>Doctor</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team/t3.png'  %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Sinchana T S </h4>
+                    <span>Doctor</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'assets/img/team/t4.png'  %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Rakshitha DR</h4>
+                    <span>Doctor</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Team Section -->
+
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div
+              class="col-lg-5  align-items-center justify-content-center about-img"
+            >
+              <img
+                src="{% static 'assets/img/img3.png'  %}"
+                class="img-fluid"
+                alt=""
+                data-aos="zoom-in"
+              />
+            </div>
+            <div class="col-lg-6 pt-5 pt-lg-0">
+            </br>
+
+              <h3 data-aos="fade-up">About Us</h3>
+              
+                We are driven by a passion to empower individuals to proactively manage their health.       
+          </br>
+               Our innovative project leverages cutting-edge artificial intelligence to revolutionize disease prediction and healthy living. With our platform, users can seamlessly predict the risk of heart disease, diabetes, and Parkinson's disease.            
+          </br>
+                Additionally, our advanced image recognition technology analyzes uploaded food images to provide instant insights into their nutritional value. 
+          </br>
+                To further support wellbeing, our AI-powered content generator offers tailored information and guidance on demand. 
+          </br>
+                We envision a future where everyone has the tools to make informed health choices, ultimately leading to longer, healthier lives.
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
+
+      <!-- ======= Contact Us Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Book Appointment</p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-lg-5"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div >
+              </br>
+              </br>
+              </br>
+                <img
+                  src="{% static 'assets/img/image10.png'  %}"
+                  class="right-image img-fluid animated col-md-10"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div
+              class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <form
+                action="{% url "contactform" %}"
+                method="post"
+                class="php-email-form"
+              >
+              {% csrf_token %}
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mt-3 mt-md-0">
+                    <label for="name">Your Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name">Message</label>
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="10"
+                    required
+                  ></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Us Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h4>Join Our Newsletter</h4>
+          
+              <form action="" method="post">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscribe"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>Health Bot</h3>
+              <p>
+                Ghousia College of Engineering<br />
+                Ramanagar, Bangalore<br /><br />
+                <strong>Phone:</strong> 9731817914<br />
+                <strong>Email:</strong> tssinchana8@gmail.com<br />
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Home</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#services">Services</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#about">About us</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#">Terms of service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#">Privacy policy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#services">Multiple Disease Prediction</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#services">HealthGpt</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#services">Check Food Healthy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Social Networks</h4>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="bx bxl-instagram"></i
+                ></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Health Bot</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/aos/aos.js'  %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'  %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js'  %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js'  %}"></script>
+  </body>
+</html>

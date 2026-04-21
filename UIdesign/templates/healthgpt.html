@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700"
+      rel="stylesheet"
+    />
+    <link href="{% static 'healthgpt/css/main.css' %}" rel="stylesheet" />
+
+    <!-- nav CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+
+  </head>
+  <body>
+    {% comment %} <h1 class="healthgpt">HealthGpt</h1> {% endcomment %}
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href="/home"><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="/home">Home</a></li>
+            <li><a class="nav-link scrollto" href="/home/#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="/home/#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="/home/#about">About Us</a></li>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/logout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <div class="s010">
+      <form action ="{% url "index" %}" method="POST">
+        {% csrf_token %}
+        <div class="inner-form">
+           <div class="">
+                  <p> <a class="result" href="/healthgpt">Health Gpt </a></p>
+                  </div> 
+          <div class="basic-search">
+            <div class="input-field">
+              <input autocomplete="off" type="text" id="not" name="question" placeholder="just prompt..." />
+              
+            </div>
+          </div>
+          <div class="advance-search">
+            
+            <div class="row third">
+              <div class="input-field">
+                {% comment %} <div class="result-count">
+                  <p> <a class="home" href="/home"> Home </a></p>
+                  </div> {% endcomment %}
+                <div class="group-btn">
+                  <button type="submit"
+              name="submit" class="btn-search">Search</button>
+              <a style="color:black" href=" /healthgpt">Clear </a>
+                  {% comment %} <a style="color:black" class="btn-search" href="/healthgpt"> Reset</a> {% endcomment %}
+                </div>
+              </div>
+            </div>
+            <h2 class="desc">HealthGpt Response: {{ question }}</h2>
+            <p id="output" class="output">{{ answer|safe }}</p>
+          </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="{% static 'healthgpt/js/extention/choices.js' %}"></script>
+    <script>
+      const customSelects = document.querySelectorAll("select");
+      const deleteBtn = document.getElementById("delete");
+      const outputclear = document.getElementById("output");
+      const choices = new Choices("select", {
+        searchEnabled: false,
+        itemSelectText: "",
+        removeItemButton: true,
+      });
+      for (let i = 0; i < customSelects.length; i++) {
+        customSelects[i].addEventListener(
+          "addItem",
+          function (event) {
+            if (event.detail.value) {
+              let parent = this.parentNode.parentNode;
+              parent.classList.add("valid");
+              parent.classList.remove("invalid");
+            } else {
+              let parent = this.parentNode.parentNode;
+              parent.classList.add("invalid");
+              parent.classList.remove("valid");
+            }
+          },
+          false
+        );
+      }
+      deleteBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const deleteAll = document.querySelectorAll(".choices__button");
+        for (let i = 0; i < deleteAll.length; i++) {
+          deleteAll[i].click();
+        }
+      });
+      function clear() {
+          outputclear.innerHTML = "";
+          fileInput.value = "";
+          clearButton.style.display = "none";
+          submitButton.style.display = "none";
+}
+    </script>
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

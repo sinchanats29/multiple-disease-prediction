@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calories Calculator</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'healthyfood/form1.css' %}"
+    />
+
+    <!-- Font-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'predictheart/css/nunito-font.css' %}"
+    />
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'predictheart/css/style4.css' %}" />
+
+    <!-- nav CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href="/home"><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="/home">Home</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/home/#services">Services</a>
+            </li>
+            <li><a class="nav-link scrollto" href="/home/#team">Team</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/home/#about">About Us</a>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/logout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <div class="containeroutput">
+      <div class="input-box">
+        <h1 class="box-header">Check Food Healthy or Not</h1>
+        {% comment %}
+        <h2 class="box-header">Choose an Image</h2>
+        {% endcomment %}
+        <hr class="divider" />
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div
+            id="drop-area"
+            class="drop-area"
+            ondragover="handleDragOver(event)"
+            ondrop="handleDrop(event)"
+          >
+            <div class="text">Choose an Image</div>
+            {% comment %}
+            <div class="textor">or</div>
+            {% endcomment %}
+            <span>
+              <input
+                type="file"
+                name="image"
+                id="fileInput"
+                accept="image/*"
+                style="display: none"
+                onchange="handleFiles(event)"
+              />
+              <label for="fileInput" class="button">Browse Files</label>
+              <button id="clear-btn" class="buttonclear" onclick="clearImage()">
+                Clear
+              </button>
+            </span>
+            <div id="image-preview"></div>
+            <h2 class="box-header">Output</h2>
+            <div id="output" class="output">
+              <p>{{ image_description|safe }}</p>
+            </div>
+          </div>
+          <div class="box">
+            <button id="submit-btn" class="submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{% static 'form.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Predict Heart Disease</title>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Font-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'predictheart/css/nunito-font.css' %}"
+    />
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'predictheart/css/style5.css' %}" />
+
+    <!-- nav CSS Files -->
+    <link href="{% static 'assets/vendor/aos' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.'  %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'  %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'  %}" rel="stylesheet" />
+  </head>
+  <body class="form-v9">
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+            <a href="/home"><span>Health Bot</span></a>
+          </h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto " href="/home">Home</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/services">Services</a>
+            </li>
+            <li><a class="nav-link scrollto" href="/home/#team">Team</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/home/#about">About Us</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/home/#contact">Contact</a>
+            </li>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a class="getstarted scrollto" href="/logout">Logout</a>
+              {% else %}
+              <a class="getstarted scrollto" href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="form-v9-content" style="background-color: #eecda9">
+        {% comment %}
+        <h1>
+          <a href="/home"><span>Services</span></a>
+        </h1>
+        {% endcomment %}
+        <form class="form-detail" action="{% url "heartresults" %}" method="post">
+          {% csrf_token %}
+          <h2>Heart Disease Prediction</h2>
+          
+{% comment %} user id row {% endcomment %}
+            <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="name"
+                class="input-text"
+                placeholder="Enter Patient Name"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="user_id"
+                id="full-name"
+                class="input-text"
+                placeholder="Enter Patient Id  "
+                required
+              />
+            </div>
+            <div class="form-row">
+              
+            </div>
+          </div>
+                    <h2></h2>
+
+
+ {% comment %} 1st row {% endcomment %}
+          <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="age"
+                class="input-text"
+                placeholder="Enter Age"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="sex"
+                id="full-name"
+                class="input-text"
+                placeholder="Enter sex"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="cp"
+                class="input-text"
+                placeholder="Enter cp"
+                required
+              />
+            </div>
+          </div>
+          {% comment %} 2nd row {% endcomment %}
+
+          <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="trestbps"
+                class="input-text"
+                placeholder="Enter trestbps"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="chol"
+                class="input-text"
+                placeholder="Enter chol"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="fbs"
+                class="input-text"
+                placeholder="Enter fbs"
+                required
+              />
+            </div>
+          </div>
+          {% comment %} 3th row {% endcomment %}
+          <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="restecg"
+                class="input-text"
+                placeholder="Enter restecg"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="thalach"
+                class="input-text"
+                placeholder="Enter thalach"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="exang"
+                class="input-text"
+                placeholder="Enter exang"
+                required
+              />
+            </div>
+          </div>
+          {% comment %} 4th row {% endcomment %}
+          <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="oldpeak"
+                class="input-text"
+                placeholder="Enter oldpeak"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="slope"
+                class="input-text"
+                placeholder="Enter slope"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="ca"
+                class="input-text"
+                placeholder="Enter ca"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row-total">
+            <div class="form-row">
+              <input
+                type="text"
+                step="0.01"
+                name="thal"
+                class="input-text"
+                placeholder="Enter thal"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row-last">
+            <input
+              type="submit"
+              name="submit"
+              class="register"
+              value="Predict"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
